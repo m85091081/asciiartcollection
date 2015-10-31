@@ -36,10 +36,10 @@ var parallelism = (function($) { var _ = {
 						introSpeed: 750,
 
 					// Height (in px) of items.
-						itemHeight: 230,
+						itemHeight: 270,
 
 					// Default width (in px) of width.
-						itemWidth: 300,
+						itemWidth: 200,
 
 					// Margin (in px) to preserve at the bottom of the viewport.
 						marginBottom: 0,
@@ -57,10 +57,10 @@ var parallelism = (function($) { var _ = {
 						minRows: 1,
 
 					// Padding (in px) between items (0 = no padding).
-						padding: 2,
+						padding: 1,
 
 					// Padding color.
-						paddingColor: 'rgba(255, 255, 255, 1)',
+						paddingColor: 'rgba(0, 0, 0, 1)',
 
 					// If true, reel scroll will reset on page refresh.
 						resetScroll: true,
