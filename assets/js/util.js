@@ -1,5 +1,17 @@
 (function($) {
-
+				$.getJSON( "json/list.json" , function( data ) {
+					console.log(data);
+					$.each(data, function ( index , vaule ) {
+						console.log(vaule);
+						var articlet1 = '<article class="item thumb" data-width="282">';
+						var text1 = '<h2>'+ vaule + '</h2>';
+						var text2 = '<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a> ';
+						var text3 ="</article>" ;
+						var t4 = articlet1+text1+text2+text3;
+						$("#header").after(t4);
+					});
+				}).fail( function( data ) {
+				});	
 	/**
 	 * Generate an indented list of links from a nav. Meant for use with panel().
 	 * @return {jQuery} jQuery object.
