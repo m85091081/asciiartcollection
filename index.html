@@ -61,11 +61,10 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/skel-viewport.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-		<script>
-		 				$.getJSON( "json/list.json" , function( data ) {                                                                   
+			<script>
+				$.getJSON( "json/list.json" , function( data ) {                                                                   
 							console.log(data);
-						 	$.each(data, function ( index , vaule ) {
+							$.each(data, function ( index , vaule ) {
 								console.log(vaule);
 								var articlet1 = '<article class="item thumb" data-width="282">';
 								var text1 = '<h2>'+ vaule + '</h2>';
@@ -76,7 +75,8 @@
 						   	});
 					   	}).fail( function( data ) {
 					});
-					</script>
+				</script>
+				<script src="assets/js/main.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 
 	</body>
