@@ -585,7 +585,6 @@ var parallelism = (function($) { var _ = {
 							.css(k, v);
 					};
 
-				$(function() {
 
 					// Objects.
 						_.objects.window = $(window),
@@ -596,7 +595,6 @@ var parallelism = (function($) { var _ = {
 						_.objects.items = _.objects.main.find('.item');
 
 					// Mode.
-						_.objects.window.on('load', function() {
 
 							skel
 								.on('+desktop', function() {
@@ -611,12 +609,22 @@ var parallelism = (function($) { var _ = {
 									}, 50);
 								});
 
-						});
 
-				});
 
 			}
 
 }; return _; })(jQuery);
-
-parallelism.init();
+$.getJSON( "json/list.json" , function( data ) {
+	console.log(data);
+	$.each(data, function ( index , vaule ) {
+		console.log(vaule);
+		var articlet1 = '<article class="item thumb" data-width="282">';
+		var text1 = '<h2>'+ vaule + '</h2>';
+		var text2 = '<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a> ';
+		var text3 ="</article>" ;
+		var t4 = articlet1+text1+text2+text3;
+		$("#header").after(t4);
+	});
+	parallelism.init();
+}).fail( function( data ) {
+});	
