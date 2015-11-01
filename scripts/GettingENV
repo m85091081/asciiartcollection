@@ -1,0 +1,3 @@
+function cut() { cat $1 | sed -n $2,${3}p; }
+alias cls=clear
+alias cat='cls&&cat'
