@@ -11,14 +11,20 @@ OUT_JSON="list.json"
 header="";
 script_locate="`pwd`";
 
+json_FULLPATH="${script_locate}/${OUT_JSON_FOLD}/${OUT_JSON}"
+
+
 cd ${MEDIA_FOLD}
 for file in `ls *.txt`;do
 	if [ "$header" == "" ]; then
-		rm "${script_locate}/${OUT_JSON_FOLD}/${OUT_JSON}"
+		rm "${json_FULLPATH}"
+		echo -n "[" >> "${json_FULLPATH}"
 	fi
 	
 	mainFileName=`echo ${file} | sed s/\.txt//g`
-	echo -n ${header}'{'$mainFileName}'}' >> "${script_locate}/${OUT_JSON_FOLD}/${OUT_JSON}"
+	echo -n ${header}'{'${mainFileName}'}' >> "${json_FULLPATH}"
 
 	header=","
 done
+
+echo -n "]" >> "${json_FULLPATH}"
