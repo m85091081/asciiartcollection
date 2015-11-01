@@ -1,11 +1,11 @@
 #!/bin/sh
-## ¥H¤U¸ô®|³£¬O¬Û¹ï©ó¥»Sciptªº ** ¤u§@¥Ø¿ýªº **
+## ä»¥ä¸‹è·¯å¾‘éƒ½æ˜¯ç›¸å°æ–¼æœ¬Sciptçš„ ** å·¥ä½œç›®éŒ„çš„ **
 
-# ³]©wtxt»Ppng¦s©ñ¸ô®|
+# è¨­å®štxtèˆ‡pngå­˜æ”¾è·¯å¾‘
 MEDIA_FOLD="../media"
-# ³]©wJSONÀÉ¦s©ñªº¸ô®|
+# è¨­å®šJSONæª”å­˜æ”¾çš„è·¯å¾‘
 OUT_JSON_FOLD="../json/"
-# ¿é¥Xªº¥]§t¥D¦CªíªºJSONÀÉ¦W
+# è¼¸å‡ºçš„åŒ…å«ä¸»åˆ—è¡¨çš„JSONæª”å
 OUT_JSON="list.json"
 
 header="";
@@ -22,7 +22,7 @@ for file in `ls *.txt`;do
 	fi
 	
 	mainFileName=`echo ${file} | sed s/\.txt//g`
-	echo -n ${header}'"'${mainFileName}'"' >> "${json_FULLPATH}"
+	echo -n ${header}'["'${mainFileName}'"]' >> "${json_FULLPATH}"
 
 	header=","
 done
