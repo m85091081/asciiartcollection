@@ -15,7 +15,7 @@ json_FULLPATH="${script_locate}/${OUT_JSON_FOLD}/${OUT_JSON}"
 
 
 cd ${MEDIA_FOLD}
-for file in `ls *.txt`;do
+for file in `ls -r *.txt`;do
 	if [ "$header" == "" ]; then
 		rm "${json_FULLPATH}"
 		echo -n "[" >> "${json_FULLPATH}"
