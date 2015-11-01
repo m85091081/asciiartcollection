@@ -624,7 +624,7 @@ $.getJSON( "json/list.json" , function( data ) {
 		console.log(vaule);
 		var articlet1 = '<article class="item thumb" data-width="350">';
 		var text1 = '<h2>'+ vaule + '</h2>';
-		var text2 = '<a href="images/fulls/01.jpg" class="image"><img src="media/'+ vaule +'.png" alt=""></a> ';
+		var text2 = '<a href="media/'+vaule+'.png" class="image"><img src="media/'+ vaule +'.png" alt=""></a> ';
 		var text3 ="</article>" ;
 		var t4 = articlet1+text1+text2+text3;
 		$("#header").after(t4);
