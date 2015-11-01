@@ -22,7 +22,7 @@ for file in `ls *.txt`;do
 	fi
 	
 	mainFileName=`echo ${file} | sed s/\.txt//g`
-	echo -n ${header}'{'${mainFileName}'}' >> "${json_FULLPATH}"
+	echo -n ${header}'"'${mainFileName}'"' >> "${json_FULLPATH}"
 
 	header=","
 done
