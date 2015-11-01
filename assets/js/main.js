@@ -135,6 +135,20 @@ var parallelism = (function($) { var _ = {
 
 				// Window.
 					_.objects.window._parallelism_update = function() {
+						
+				$.getJSON( "json/list.json" , function( data ) {                                                                   
+							console.log(data);
+							$.each(data, function ( index , vaule ) {
+								console.log(vaule);
+								var articlet1 = '<article class="item thumb" data-width="282">';
+								var text1 = '<h2>'+ vaule + '</h2>';
+								var text2 = '<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a>';
+								var text3 ='</article>' ;
+								var t4 = articlet1+text1+text2+text3;
+								$ ("#reel").append(t4); 
+						   	});
+					   	}).fail( function( data ) {
+					});
 						var i, j, x, y, t;
 
 						// Calculate number of rows we can fit on the screen.
@@ -207,6 +221,7 @@ var parallelism = (function($) { var _ = {
 
 						// Resize reel.
 							_.objects.reel
+
 								.css('height', (itemHeight * rows) + (_.settings.padding * 2))
 								.css('width', rowWidth);
 
