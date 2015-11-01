@@ -13,6 +13,8 @@ var parallelism = (function($) { var _ = {
 		// Settings
 			settings: {
 
+
+
 				// Popup overlay color.
 					popupOverlayColor: '#1a1f2c',
 
@@ -118,6 +120,7 @@ var parallelism = (function($) { var _ = {
 
 		// Initializes desktop mode.
 			initDesktop: function() {
+				
 
 				var $SZ = $(''), $SZLeft, $SZRight;
 
