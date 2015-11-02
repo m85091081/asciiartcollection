@@ -2,7 +2,7 @@
 
 JSON_SRC="https://m85091081.github.io/asciiartcollection/json/list.json"
 THEME_SRC="https://m85091081.github.io/asciiartcollection/media/"
-INSTALLER_SRC="https://github.com/m85091081/asciiartcollection/raw/shell-script/scripts/ASCIIArtInstaller.sh"
+INSTALLER_SRC="https://raw.githubusercontent.com/m85091081/asciiartcollection/shell-script/scripts/ASCIIArtInstaller.sh"
 
 WORKING_DIR="$HOME/.asciiarting"
 THEME_LIST="$WORKING_DIR/list.txt"
