@@ -2,7 +2,7 @@
 
 JSON_SRC="http://m85091081.github.io/asciiartcollection/json/list.json"
 THEME_SRC="http://m85091081.github.io/asciiartcollection/media/"
-INSTALLER_SRC="http://m85091081.github.io/asciiartcollection/scripts/ASCIIArtInstaller.sh"
+INSTALLER_SRC="https://github.com/m85091081/asciiartcollection/raw/shell-script/scripts/ASCIIArtInstaller.sh"
 
 WORKING_DIR="$HOME/.asciiarting"
 THEME_LIST="$WORKING_DIR/list.txt"
@@ -53,7 +53,7 @@ while [ "$input_theme" == "false" ];do
 				clear
 				cat $THEME_FOLD/${theme}.txt
 				echo "================================================"
-				read -p "這個主題如何？可以的話請輸入y：" yn
+				read -p "這個主題如何？可以的話請輸入y或是輸入n重選 ：" yn
 				if [ "$yn" == "y" ] || [ "$yn" == "Y" ];then
 					input_theme="${theme}.txt"
 				fi
