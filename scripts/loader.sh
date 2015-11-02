@@ -38,13 +38,13 @@ rm ${THEME_LIST}.tmp
 input_theme=false
 while [ "$input_theme" == "false" ];do
 	## 顯示佈景主題清單
-	echo "可以選擇的佈景有："
+	echo "可以選擇的圖有："
 	echo "======================="
 	cat "$THEME_LIST" | grep -n ""
 	echo "======================="
 
 	## 詢問使用者要安裝的佈景
-	read -p "請輸入佈景代號（數字）：" theme_num
+	read -p "請輸入ASCII ART代號（數字）：" theme_num
 	if [[ "$theme_num" =~ ^[0-9]+$ ]];then
 		## 尋找主題名稱
 		if theme=`showFileSpLine "$THEME_LIST" "$theme_num"`;then
@@ -58,7 +58,7 @@ while [ "$input_theme" == "false" ];do
 					input_theme="${theme}.txt"
 				fi
 			else
-				echo "主題下載失敗，伺服器上找不到主題"
+				echo "ASCII ART下載失敗，伺服器上找不到這張圖"
 			fi
 		else
 			echo "請輸入1 ~ $count 範圍內的數字"
@@ -68,7 +68,7 @@ while [ "$input_theme" == "false" ];do
 	fi
 done
 
-echo "你要安裝的主題題已經下載至$THEME_FOLD/${input_theme}"
+echo "你要安裝的ASCII ART題已經下載至$THEME_FOLD/${input_theme}"
 echo "下載安裝程式..."
 curl $INSTALLER_SRC -o "$WORKING_DIR/ASCIIArtInstaller.sh"
 
@@ -83,7 +83,7 @@ while [ "$input_method" == "false" ];do
 	echo "但是如果你使用gdm，因為這裡的motd檔案太大太複雜，會讓gdm當掉無法登入"
 	echo "===================================================================="
 	echo "2. 安裝到~/.motd"
-	echo "安裝到~/.motd不需要root權限，但是顯示圖片時會把Last Login的資訊洗掉"
+	echo "安裝到~/.motd不需要root權限，但顯示ASCII ART會把Last Login的資訊洗掉"
 	echo "如果是要求安全的環境，請斟酌使用"
 	echo "===================================================================="
 	echo "1. 安裝到/etc/motd"
@@ -104,9 +104,9 @@ done
 input_headBlankLine=false
 while [ "$input_headBlankLine" == "false" ];do
 	## 說明
-	echo "前面提到了，顯示這裡的motd會把整個畫面洗掉，所以如果要在圖片前顯示文字"
-	echo "也會被洗掉。 如果圖片後顯示文字則是直接插入就好，請輸入0。"
-	read -p "有需要圖片前面需要幾行空白行？不需要請輸入0：" input_headBlankLine
+	echo "前面提到了，顯示這裡的motd會把整個畫面洗掉，所以如果要在ASCII ART前顯示文字"
+	echo "也會被洗掉。 如果ASCII ART後顯示文字則是直接插入就好，請輸入0。"
+	read -p "有需要ASCII ART前面需要幾行空白行？不需要請輸入0：" input_headBlankLine
 	if ! [[ "$input_headBlankLine" =~ ^[0-9]+$ ]];then
 		echo "不需要空行也請輸入0"
 		input_headBlankLine=false
