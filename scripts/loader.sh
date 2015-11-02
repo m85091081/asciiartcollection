@@ -71,6 +71,7 @@ done
 echo "你要安裝的ASCII ART題已經下載至$THEME_FOLD/${input_theme}"
 echo "下載安裝程式..."
 curl -fsSL $INSTALLER_SRC -o "$WORKING_DIR/ASCIIArtInstaller.sh"
+chmod 755 "$WORKING_DIR/ASCIIArtInstaller.sh"
 
 ## 詢問使用者安裝方式
 input_method=false
