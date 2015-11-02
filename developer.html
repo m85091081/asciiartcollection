@@ -1,0 +1,48 @@
+<h2 id="開發者向">開發者向</h2>
+
+
+
+<h3 id="基本介紹">基本介紹</h3>
+
+<p><strong>警告:</strong> <em>ASCII Art Installer 僅供 Unix/-Like環境使用.</em></p>
+
+<ul>
+<li>[一般]你需要一個 Linux 或是 Unix-Based/Like 的 OS 。</li>
+<li>[一般]<code>curl</code> 必須安裝。</li>
+<li>[一般]如果要安裝到 shell 你需要一個 shell 環境（預設支援bash/zsh）。</li>
+<li>[開發]如果您需要二次開發我們的工具請依照 GNU 授權。</li>
+<li>[開發]本腳本全程使用 Shell Script 進行開發以及使用 git 進行版本控制。</li>
+<li>[所有]你的宅魂（？</li>
+</ul>
+
+
+
+<h3 id="開發者基礎事項">開發者基礎事項</h3>
+
+<ul>
+<li>所有的最新 script 都在 shell-script 分支 的 /script 資料夾內。</li>
+<li>ASCII Art 的 sample 檔 都在 shell-script 分支 的 /media 資料夾。</li>
+<li>如需要修改可以參考我們的註解進行修改。</li>
+<li>如果發現了罷個（bug）請幫我們送 PR。</li>
+<li>前端相關的東西都在 gh-pages 這個分支。</li>
+<li>Master 分支 僅存放 穩定板的 shell-script , 最新的 beta-script 都會在 shell-script分支。</li>
+<li>最後歡迎跳坑～。</li>
+</ul>
+
+
+
+<h3 id="下載整個專案">下載整個專案</h3>
+
+
+
+<pre class="prettyprint"><code class="language-shell hljs php">git <span class="hljs-keyword">clone</span> https:<span class="hljs-comment">//github.com/m85091081/asciiartcollection.git</span></code></pre>
+
+
+
+<h3 id="最後這個是安裝用的-script">最後這個是安裝用的 script</h3>
+
+<p>使用 curl 進行 loader.sh 抓取。</p>
+
+
+
+<pre class="prettyprint"><code class="language-shell hljs bash">sh -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/m85091081/asciiartcollection/shell-script/scripts/loader.sh )</span>"</span></code></pre>
