@@ -629,6 +629,8 @@ $.getJSON( "json/list.json" , function( data ) {
 		var t4 = articlet1+text1+text2+text3;
 		$("#header").after(t4);
 	});
+	var foo = $('.contact')
+		foo.poptrox();
 	parallelism.init();
 }).fail( function( data ) {
 });	
