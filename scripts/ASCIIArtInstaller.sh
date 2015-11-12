@@ -35,7 +35,7 @@ function waitForUserRead() {
 
 if [ "$1" == "system-user" ]; then
 	MOTD_FILE="/etc/motd"
-	display_script="shopt -q login_shell || cat $MOTD_FILE"
+	display_script="[[ -o login ]] || cat $MOTD_FILE"
 	install
 	exit 0
 	
@@ -78,7 +78,7 @@ if [ "$3" == "system" ];then
 	echo "請注意GDM會讀取/etc/motd，而複雜的ASCII Art會讓GDM掛掉無法登入使用者！！"
 	waitForUserRead "繼續安裝請按下Enter，取消請按Ctrl C"
 	MOTD_FILE="/etc/motd"
-	display_script="shopt -q login_shell || cat $MOTD_FILE"
+	display_script="[[ -o login ]] || cat $MOTD_FILE"
 elif [ "$3" == "user" ];then
 	mode="USER"
 	echo "安裝到使用者 (~/.motd)"
@@ -121,7 +121,12 @@ $EDITOR "$MOTD_TEMP"
 
 ## 加入自動清除畫面的控制碼
 echo "插入自動清除畫面的控制碼..."
-sed -i "1,1s/^/[H[J&/g" "$MOTD_TEMP"
+if [ $move_line != "0" ];then
+	sed -i "1,1s/^/[H[J&/g" "$MOTD_TEMP"
+else
+	echo "插入空白行，就當作你已經留好空間，不插入清除畫面的控制字元！"
+fi
+
 
 ## 複製檔案
 if [ "$mode" == "SYS" ];then
