@@ -1,8 +1,8 @@
 #!/bib/sh
 
-JSON_SRC="http://m85091081.github.io/asciiartcollection/json/list.json"
-THEME_SRC="http://m85091081.github.io/asciiartcollection/media/"
-INSTALLER_SRC="http://m85091081.github.io/asciiartcollection/scripts/ASCIIArtInstaller.sh"
+JSON_SRC="https://m85091081.github.io/asciiartcollection/json/list.json"
+THEME_SRC="https://m85091081.github.io/asciiartcollection/media/"
+INSTALLER_SRC="https://raw.githubusercontent.com/m85091081/asciiartcollection/shell-script/scripts/ASCIIArtInstaller.sh"
 
 WORKING_DIR="$HOME/.asciiarting"
 THEME_LIST="$WORKING_DIR/list.txt"
@@ -17,7 +17,7 @@ test -d $WORKING_DIR || mkdir $WORKING_DIR
 test -d $THEME_FOLD || mkdir $THEME_FOLD
 
 ## 取得清單
-list=`curl $JSON_SRC | sed "s/,/\n/g" | sed "s/.*\[\"//g" | sed "s/\"\].*//g"`
+list=`curl -fsSL $JSON_SRC | sed "s/,/\n/g" | sed "s/.*\[\"//g" | sed "s/\"\].*//g"`
 
 count=0
 
@@ -49,11 +49,11 @@ while [ "$input_theme" == "false" ];do
 		## 尋找主題名稱
 		if theme=`showFileSpLine "$THEME_LIST" "$theme_num"`;then
 			## 嘗試下載
-			if curl "${THEME_SRC}/${theme}.txt" -o $THEME_FOLD/${theme}.txt ;then
+			if curl -fsSL "${THEME_SRC}/${theme}.txt" -o $THEME_FOLD/${theme}.txt ;then
 				clear
 				cat $THEME_FOLD/${theme}.txt
 				echo "================================================"
-				read -p "這個主題如何？可以的話請輸入y：" yn
+				read -p "這個主題如何？可以的話請輸入y或是輸入n重選 ：" yn
 				if [ "$yn" == "y" ] || [ "$yn" == "Y" ];then
 					input_theme="${theme}.txt"
 				fi
@@ -70,7 +70,8 @@ done
 
 echo "你要安裝的ASCII ART題已經下載至$THEME_FOLD/${input_theme}"
 echo "下載安裝程式..."
-curl $INSTALLER_SRC -o "$WORKING_DIR/ASCIIArtInstaller.sh"
+curl -fsSL $INSTALLER_SRC -o "$WORKING_DIR/ASCIIArtInstaller.sh"
+chmod 755 "$WORKING_DIR/ASCIIArtInstaller.sh"
 
 ## 詢問使用者安裝方式
 input_method=false
