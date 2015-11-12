@@ -1,4 +1,4 @@
-#!/bib/sh
+#!/bin/sh
 
 JSON_SRC="https://m85091081.github.io/asciiartcollection/json/list.json"
 THEME_SRC="https://m85091081.github.io/asciiartcollection/media/"
