@@ -121,7 +121,12 @@ $EDITOR "$MOTD_TEMP"
 
 ## 加入自動清除畫面的控制碼
 echo "插入自動清除畫面的控制碼..."
-sed -i "1,1s/^/[H[J&/g" "$MOTD_TEMP"
+if [ $move_line != "0" ];then
+	sed -i "1,1s/^/[H[J&/g" "$MOTD_TEMP"
+else
+	echo "插入空白行，就當作你已經留好空間，不插入清除畫面的控制字元！"
+fi
+
 
 ## 複製檔案
 if [ "$mode" == "SYS" ];then
