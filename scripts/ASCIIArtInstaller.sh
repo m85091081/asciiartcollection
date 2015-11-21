@@ -120,8 +120,11 @@ if [ "$STEP" == 1 ];then
 fi
 
 waitForUserRead "最後修改，加入你需要的內容、或是刪除不需要的內容吧！ 按下Enter開始"
-$EDITOR "$MOTD_TEMP"
-vim $MOTD_TEMP
+if test $EDITOR;then
+	$EDITOR "$MOTD_TEMP"
+else
+	vim $MOTD_TEMP
+fi
 
 ## 加入自動清除畫面的控制碼
 echo "插入自動清除畫面的控制碼..."
@@ -147,7 +150,7 @@ if [ "$mode" == "SYS" ];then
 	fi
 else
 	mv "$MOTD_TEMP" "${MOTD_TEMP}-`date +%Y%m%d-%H%M%S`"
-	cat $MOTD_TEMP > $MOTD_FILE
+	cp $MOTD_TEMP > $MOTD_FILE
 fi
 
 ## 安裝non-Login Shell的顯示腳本
@@ -155,7 +158,7 @@ install
 
 echo ===========================================
 echo ASCII ART motd已經安裝完成
-echo 如果需要移除，請刪除 ${MOTD_TEMP}與
+echo 如果需要移除，請刪除 ${MOTD_FILE}與
 for shell in $TARGET_SHELL;do
 	echo ${HOME}/.${shell}rc
 done
