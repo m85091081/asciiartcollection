@@ -117,4 +117,4 @@ done
 ## 詢問完成
 echo "稍後會使用 $EDITOR 編輯motd，你可以加入你需要的內容、或是刪掉內容。"
 read -p "按下Enter開始"
-sh "$WORKING_DIR/ASCIIArtInstaller.sh" "$THEME_FOLD/$input_theme" $input_headBlankLine $input_method -s
+bash "$WORKING_DIR/ASCIIArtInstaller.sh" "$THEME_FOLD/$input_theme" $input_headBlankLine $input_method -s
