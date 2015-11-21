@@ -149,7 +149,7 @@ if [ "$mode" == "SYS" ];then
 		sudo -l "cat $MOTD_TEMP > $MOTD_FILE"
 	fi
 else
-	mv "$MOTD_TEMP" "${MOTD_TEMP}-`date +%Y%m%d-%H%M%S`"
+	mv "$MOTD_FILE" "${MOTD_FILE}-`date +%Y%m%d-%H%M%S`"
 	cp $MOTD_TEMP > $MOTD_FILE
 fi
 
