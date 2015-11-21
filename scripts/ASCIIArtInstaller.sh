@@ -1,5 +1,7 @@
 #!/bin/sh
 
+WORKING_DIR="$HOME/.asciiarting"
+
 ## 要安裝的shell
 TARGET_SHELL="zsh bash"
 
@@ -8,7 +10,8 @@ CONSOLE_W=80
 CONSOLE_L=24
 
 ## 暫存motd檔的地方
-MOTD_TEMP=/tmp/motd
+#MOTD_TEMP=/tmp/motd
+MOTD_TEMP=${WORKING_DIR}/motd_tmp
 
 SLIENT=""
 
@@ -118,6 +121,7 @@ fi
 
 waitForUserRead "最後修改，加入你需要的內容、或是刪除不需要的內容吧！ 按下Enter開始"
 $EDITOR "$MOTD_TEMP"
+vim $MOTD_TEMP
 
 ## 加入自動清除畫面的控制碼
 echo "插入自動清除畫面的控制碼..."
@@ -143,7 +147,7 @@ if [ "$mode" == "SYS" ];then
 	fi
 else
 	mv "$MOTD_TEMP" "${MOTD_TEMP}-`date +%Y%m%d-%H%M%S`"
-	cp $MOTD_TEMP $MOTD_FILE
+	cat $MOTD_TEMP > $MOTD_FILE
 fi
 
 ## 安裝non-Login Shell的顯示腳本
