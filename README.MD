@@ -17,5 +17,5 @@ __警告:__ _ASCII Art Installer 僅供 Unix/-Like環境使用._
 #### 請輸入以下指令到您的終端機
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/m85091081/asciiartcollection/shell-script/scripts/loader.sh )"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/m85091081/asciiartcollection/shell-script/scripts/loader.sh )"
 ```
