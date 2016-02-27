@@ -23,6 +23,12 @@ function install() {
 			echo "$display_script" >> ~/.${shell}rc
 		fi
 	done
+	if cat  ~/.config/fish/config.fish	| grep "$display_script" >> /dev/null ; then
+		echo "fish 已經安裝過了，只更新圖檔"
+	else
+		echo "正在把motd加入使用者 config.fish"
+		echo "$display_script" >>  ~/.config/fish/config.fish
+	fi
 }
 
 function waitForUserRead() {
@@ -155,6 +161,7 @@ echo 如果需要移除，請刪除 ${MOTD_TEMP}與
 for shell in $TARGET_SHELL;do
 	echo ${HOME}/.${shell}rc
 done
+echo ~/.config/fish/config.fish
 echo 中的 \"${display_script}\"這行
 if [ "$mode" == "SYS" ];then 
 	echo 如果其他使用者non-login shell也要看到motd
