@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.2.1](https://github.com/m85091081/asciiartcollection/tree/v1.2.1) (2016-11-24)
+[Full Changelog](https://github.com/m85091081/asciiartcollection/compare/v1.2...v1.2.1)
+
+**Closed issues:**
+
+- 加入你需要的內容、或是刪除不需要的內容吧！     預設是用vim嗎？ [\#8](https://github.com/m85091081/asciiartcollection/issues/8)
+
 ## [v1.2](https://github.com/m85091081/asciiartcollection/tree/v1.2) (2016-11-24)
 [Full Changelog](https://github.com/m85091081/asciiartcollection/compare/v1.1...v1.2)
 
