@@ -129,7 +129,7 @@ waitForUserRead "最後修改，加入你需要的內容、或是刪除不需要
 if test $EDITOR;then
 	$EDITOR "$MOTD_TEMP"
 else
-	vim $MOTD_TEMP
+	vi $MOTD_TEMP
 fi
 
 ## 加入自動清除畫面的控制碼
