@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.2.2](https://github.com/m85091081/asciiartcollection/tree/v1.2.2) (2016-11-24)
+[Full Changelog](https://github.com/m85091081/asciiartcollection/compare/v1.2.1...v1.2.2)
+
+**Merged pull requests:**
+
+- finish \#11 [\#12](https://github.com/m85091081/asciiartcollection/pull/12) ([dd-han](https://github.com/dd-han))
+- update webpage [\#10](https://github.com/m85091081/asciiartcollection/pull/10) ([dd-han](https://github.com/dd-han))
+
 ## [v1.2.1](https://github.com/m85091081/asciiartcollection/tree/v1.2.1) (2016-11-24)
 [Full Changelog](https://github.com/m85091081/asciiartcollection/compare/v1.2...v1.2.1)
 
