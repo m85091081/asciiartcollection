@@ -9,8 +9,6 @@
 </head>
 <body><div class="container"><h2 id="開發者向">開發者向</h2>
 
-
-
 <h3 id="基本介紹">基本介紹</h3>
 
 <p><strong>警告:</strong> <em>ASCII Art Installer 僅供 Unix/-Like環境使用.</em></p>
@@ -24,35 +22,39 @@
 <li>[所有]你的宅魂（？</li>
 </ul>
 
-
-
 <h3 id="開發者基礎事項">開發者基礎事項</h3>
-
 <ul>
-<li>所有的最新 script 都在 shell-script 分支 的 /script 資料夾內。</li>
-<li>ASCII Art 的 sample 檔 都在 shell-script 分支 的 /media 資料夾。</li>
+<li>所有的分支都會有所有的內容</li>
+<li>shell-script分支主要針對安裝Script與圖檔更新</li>
+<li>html分支主要針對網站進行更新，確定沒問題才會合併進gh-pages分支</li>
+<li>因為開發者只有兩人，所以通常我們會直接再這兩個分支上做事<li>
+<li>我們測試沒問題後，不管哪個分支都會回去master</li>
 <li>如需要修改可以參考我們的註解進行修改。</li>
 <li>如果發現了罷個（bug）請幫我們送 PR。</li>
-<li>前端相關的東西都在 gh-pages 這個分支。</li>
-<li>Master 分支 僅存放 穩定板的 shell-script , 最新的 beta-script 都會在 shell-script分支。</li>
 <li>最後歡迎跳坑～。</li>
 </ul>
 
-
-
 <h3 id="下載整個專案">下載整個專案</h3>
-
-
-
 <pre class="prettyprint"><code class="language-shell hljs php">git <span class="hljs-keyword">clone</span> https:<span class="hljs-comment">//github.com/m85091081/asciiartcollection.git</span></code></pre>
 
+<h3 id="update-scrupt">Script更新步驟</h3>
+<ul>
+  <li>下載整個專案</li>
+  <li>建立branch</li>
+  <li>修正它、更新它、加入新功能</li>
+  <li>commit、push、發PR</li>
+</ul>
 
+<h3 id="update-image">圖檔更新步驟</h3>
+<p>因為Linux並不把填色字塊當成全形字元，因此我們放的motd文件都是包含定位符號的文字，避免在不同系統上的顯示差異太大，下載方式有空補上來。</p>
+<ul>
+  <li>下載整個專案</li>
+  <li>建立branch</li>
+  <li>將motd放進media資料夾，副檔名.txt</li>
+  <li>弄個截圖（你可以直接cat motd-file.txt），存png放進media資料夾</li>
+  <li>進入scripts資料夾，執行createJSON.sh，產生新的JSON</li>
+  <li>commit、push、發PR</li>
+</ul>
 
-<h3 id="最後這個是安裝用的-script">最後這個是安裝用的 script</h3>
-
-<p>使用 curl 進行 loader.sh 抓取。</p>
-
-
-
-<pre class="prettyprint"><code class="language-shell hljs bash">bash -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/m85091081/asciiartcollection/shell-script/scripts/loader.sh )</span>"</span></code></pre></div></body>
+</body>
 </html>
