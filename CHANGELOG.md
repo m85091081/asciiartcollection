@@ -1,12 +1,15 @@
 # Change Log
 
-## [Unreleased](https://github.com/m85091081/asciiartcollection/tree/HEAD)
-
-[Full Changelog](https://github.com/m85091081/asciiartcollection/compare/v1.1...HEAD)
+## [v1.2](https://github.com/m85091081/asciiartcollection/tree/v1.2) (2016-11-24)
+[Full Changelog](https://github.com/m85091081/asciiartcollection/compare/v1.1...v1.2)
 
 **Closed issues:**
 
 - 你今天explosion了嗎? [\#7](https://github.com/m85091081/asciiartcollection/issues/7)
+
+**Merged pull requests:**
+
+- fix bug [\#9](https://github.com/m85091081/asciiartcollection/pull/9) ([VagrantPi](https://github.com/VagrantPi))
 
 ## [v1.1](https://github.com/m85091081/asciiartcollection/tree/v1.1) (2016-04-13)
 **Merged pull requests:**
